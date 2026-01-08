@@ -7,7 +7,6 @@ const FILES_TO_CACHE = [
   './icon-192.png',
   './icon-512.png'
 ];
-navigator.serviceWorker.register("/reaction-game/sw.js");
 
 self.addEventListener("install", event => {
   event.waitUntil(
