@@ -3,6 +3,7 @@ const FILES_TO_CACHE = [
   "index.html",
   "manifest.json"
 ];
+navigator.serviceWorker.register("/reaction-game/sw.js");
 
 self.addEventListener("install", event => {
   event.waitUntil(
