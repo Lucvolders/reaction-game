@@ -1,7 +1,7 @@
 {
   "name": "Reaction Game",
   "short_name": "Reaction",
-  "start_url": "/reaction-game/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff0000",
