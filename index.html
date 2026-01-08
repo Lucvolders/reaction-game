@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reaction Game</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff0000">
+
+<style>
+.red {
+  height: 50px;
+  width: 50px;
+  background-color: #f00;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+</head>
+
+<body>
+<h3 id="besttijd">Start</h3>
+<h3 id="nwtijd"></h3>
+<div id="divtest" class="red"></div>
+
+<script>
+document.getElementById("divtest").addEventListener("click", geklikt );
+var start2 = new Date();
+var best = 1000000;
+
+function geklikt()
+{
+  var newx = (Math.random()*window.innerWidth)-50;
+  var newy = (Math.random()*window.innerHeight)-50;
+  if (newx < 0) newx = 0;
+  if (newy < 0) newy = 0;
+
+  var d = document.getElementById('divtest');
+  d.style.position = "absolute";
+  d.style.left = newx+'px';
+  d.style.top = newy+'px';
+
+  var eind = +new Date();
+  var tijd = eind - start2;
+  start2 = eind;
+
+  if (tijd < best) {
+    best = tijd;
+    document.getElementById('besttijd').innerHTML = "beste tijd = " + best;
+  }
+  document.getElementById('nwtijd').innerHTML = "jouw tijd = " + tijd;
+}
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
+
