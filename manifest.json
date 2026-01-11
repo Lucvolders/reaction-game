@@ -2,7 +2,7 @@
   "name": "Reaction Game",
   "short_name": "Reaction",
   "start_url": "/reaction-game/index.html",
-  "scope": "/reaction-game/
+  "scope": "/reaction-game/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff0000",
